@@ -1,62 +1,60 @@
 #include <stdio.h>
 #include <math.h>
 
-/*
- *  ����: ����⪨ ��������� 25, 10, 5, 1 業�
- *  �ணࠬ�� ������:
- *  ������ ���짮��⥫�, ᪮�쪮 ᤠ� �㦭� �뤠��
- *  ������� �������쭮� ������⢮ �����, � ������� ������ ����� �� ᤥ����
- */
-
 
 int main(void) {
 
-    //����⠭��
+    //Константы
     #define QUARTER 25
     #define DIME 10
     #define NICKEL 5
     #define PENNY 1
 
-    // ��६����
-    float owed;
-    int centCount;
-    int quarterCount;
-    int dimeCount;
-    int nickelCount;
-    int pennyCount;
-    int rest;
+    // Переменные
+    float owed = 0;
+    int centCount = 0;
+    int quarterCount = 0;
+    int dimeCount = 0;
+    int nickelCount = 0;
+    int pennyCount = 0;
+    int rest = 0;
+    int sum = 0;
 
-    printf("�ਢ��! ����쪮 � ������ ��� ᤠ�?");
+    printf("Привет! Сколько я должен Вам сдачи?");
     printf("\n");
 
-    // ���� ������
+    // ???? ??????
     scanf("%f", &owed);
 
     if (owed <= 0) {
-        printf("� ��� ��祣� �� ������!\n");
-    }
-    else if(owed > 0){
-        // ��ॢ���� ������� � 業��
+        printf("Я ничего вам не должен!\n");
+    } else {
+        // ??????? ??????? ? ???
         centCount = (int) round (owed * 100);
 
-        // ��⠥� ᪮�쪮 �㦭� ����⮪ ��������� 25 業⮢
+        // ???? ??? ??? ????? ????????? 25 ??
         quarterCount = centCount / QUARTER;
+        rest = centCount % QUARTER;
 
-        // ��⠥� ᪮�쪮 �㦭� ����⮪ ��������� 10 業⮢
-        dimeCount = quarterCount / DIME;
+        // ???? ??? ??? ????? ????????? 10 ??
+        dimeCount = rest / DIME;
+        rest = rest % DIME;
 
-        // ��⠥� ᪮�쪮 �㦭� ����⮪ ��������� 5 業⮢
-        nickelCount = dimeCount / NICKEL;
+        // ???? ??? ??? ????? ????????? 5 ??
+        nickelCount = rest / NICKEL;
+        rest = rest % NICKEL;
 
-        // ��⠥� ᪮�쪮 �㦭� ����⮪ ��������� 1 業�
-        pennyCount = nickelCount / PENNY;
+        // ???? ??? ??? ????? ????????? 1 ??
+        pennyCount = rest / PENNY;
+        rest = rest % PENNY;
 
-        // �����뢠�� � �뢮��� �� �����
-        rest = quarterCount + dimeCount + nickelCount + pennyCount;
-        printf("%i", rest);
+        // ???????? ? ????? ?? ?????
+        sum = quarterCount + dimeCount + nickelCount + pennyCount + rest;
+        printf("%i", sum);
         printf("\n");
     }
     return 0;
 }
+
 
 
