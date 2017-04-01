@@ -8,14 +8,13 @@
  *  Посчитать минимальное количество монет, с помощью которых можно это сделать
  */
 
-
-int main(void) {
-
-    //Константы
+     //Константы
     #define QUARTER 25
     #define DIME 10
     #define NICKEL 5
     #define PENNY 1
+
+int main(void) {
 
     // Переменные
     float owed;
