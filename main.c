@@ -23,7 +23,7 @@ int main(void) {
     printf("Привет! Сколько я должен Вам сдачи?");
     printf("\n");
 
-    // ???? ??????
+    // Ввод данных
     scanf("%f", &owed);
 
     if (owed <= 0) {
@@ -50,11 +50,15 @@ int main(void) {
 
         // Складываем и выводим в консоль
         sum = quarterCount + dimeCount + nickelCount + pennyCount + rest;
-        printf("%i", sum);
-        printf("\n");
+        printf("Монеты номиналом 25 центов: %i\n", quarterCount);
+        printf("Монеты номиналом 10 центов: %i\n", dimeCount);
+        printf("Монеты номиналом  5 центов: %i\n", nickelCount);
+        printf("Монеты номиналом  1   цент: %i\n", pennyCount);
+        printf("Итог: %i\n", sum);
     }
     return 0;
 }
+
 
 
 
