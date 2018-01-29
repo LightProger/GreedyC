@@ -1,5 +1,12 @@
 #include <stdio.h>
-#include <math.h>
+/*
+ * Дано: монетки номиналом 25, 10, 5, 1 цент
+
+Программа должна:
+
+   1 Спросить пользователя, сколько сдачи нужно выдать
+   2 Посчитать минимальное количество монет, с помощью которых можно это сделать
+*/
 
 
 int main(void) {
@@ -11,7 +18,7 @@ int main(void) {
     #define PENNY 1
 
     // Переменные
-    float owed = 0;
+    double owed = 0;
     int centCount = 0;
     int quarterCount = 0;
     int dimeCount = 0;
@@ -24,13 +31,13 @@ int main(void) {
     printf("\n");
 
     // Ввод данных
-    scanf("%f", &owed);
+    scanf("%lf", &owed);
 
     if (owed <= 0) {
         printf("Я ничего вам не должен!\n");
     } else {
         // Переводим доллары в центы
-        centCount = (int) round (owed * 100);
+        centCount = (int) (owed * 100);
 
         // Считаем сколько нужно монеток номиналом 25 центов
         quarterCount = centCount / QUARTER;
